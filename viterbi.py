@@ -74,8 +74,12 @@ if __name__ == '__main__':
         # add end tag
         word_tags.append(('END', 'END'))
 
-    # set identifiers which appear RARE_COUNT times or less to UNKNOWN_IDENTIFIER
-    word_tags = tuple((pos, form if (form == 'START' or form == 'END' or training_words[form] > RARE_COUNT) else UNKNOWN_IDENTIFIER) for pos, form in word_tags)
+    # set identifiers which appear <= RARE_COUNT to UNKNOWN_IDENTIFIER
+    word_tags = tuple((pos, form if (form == 'START' or
+                                     form == 'END' or
+                                     training_words[form] > RARE_COUNT)
+                                 else UNKNOWN_IDENTIFIER)
+        for pos, form in word_tags)
 
     tags = tuple(tag for tag, _ in word_tags)
 
@@ -100,7 +104,11 @@ if __name__ == '__main__':
     total_words = 0
 
     for sentence in dev_set:
-        words = ('START', *(token.form if (training_words[token.form] > RARE_COUNT) else UNKNOWN_IDENTIFIER for token in sentence), 'END')
+        words = (
+            'START',
+            *(token.form if (training_words[token.form] > RARE_COUNT)
+                         else UNKNOWN_IDENTIFIER for token in sentence),
+            'END')
         correct_pos = (token.upos for token in sentence)
 
         estimated_pos, _ = viterbi(words, A, B, pi, states)
