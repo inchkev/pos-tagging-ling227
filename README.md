@@ -6,6 +6,10 @@ POS Tagging.
 
 [Kevin Chen](https://github.com/inchkev), [Nick Schoelkopf](https://github.com/NickSchoelkopf), [Neal Ma](https://github.com/nmadev)
 
+## Results
+
+![Chart of results](results.png)
+
 ## Datasets used
 
 - [English](https://github.com/UniversalDependencies/UD_English-EWT)
