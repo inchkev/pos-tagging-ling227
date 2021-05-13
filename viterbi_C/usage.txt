@@ -1,0 +1,7 @@
+To run:
+  ./Viterbi [path to training file] [path to testing file]
+  
+Other notes:
+  All files must be in standardized .conllu format. If either path to the files
+  are incorrect or the format of the contents of either file is incorrect then 
+  the program will return a [Segmentation Fault].
