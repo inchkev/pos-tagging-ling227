@@ -1,6 +1,10 @@
 # LING 227 Final Project
 
-Kevin Chen, Nick Schoelkopf, Neal Ma
+POS Tagging.
+
+## Authors
+
+[Kevin Chen](https://github.com/inchkev), [Nick Schoelkopf](https://github.com/NickSchoelkopf), [Neal Ma](https://github.com/nmadev)
 
 ## Datasets used
 
