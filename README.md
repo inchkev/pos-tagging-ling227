@@ -8,7 +8,7 @@ Final project for LING 227.
 
 ## Results
 
-![Chart of results](results.png)
+![Chart of results](results.jpg)
 
 ## Datasets used
 
