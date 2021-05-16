@@ -1,6 +1,6 @@
-# LING 227 Final Project
+# Evaluating Algorithms and Languages for POS Tagging 
 
-POS Tagging.
+Final project for LING 227.
 
 ## Authors
 
