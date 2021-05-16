@@ -13,7 +13,7 @@ to the dataset's prefix (without "train.conllu", "dev.conllu", etc. as those are
 
 ### C++ Viterbi
 
-Text
+The C++ Viterbi implementation is in the `viterbi_cc` directory. Specifics on terminal commands are found in `usage.txt`. The current executable, `Viterbi`, is compiled to run the Viterbi algorithm. To run the baseline approach, comment out line 90 in `viterbi.cc` and uncomment line 89, then run `make` in the terminal.
 
 ### Python RNN
 
