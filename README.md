@@ -15,7 +15,7 @@ Text
 
 ### Python RNN
 
-Text
+The Python RNN (Bidirectional LSTM) implementation is in the `RNN` directory. To run, upload to Google Colaboratory and run with train, dev, and test sets for all languages in a folder in Google Drive titled `Colab Notebooks`, then run all cells in notebook in order. Exact accuracy numbers will vary slightly due to randomness in NN initialization.
 
 ## Results
 
