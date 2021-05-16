@@ -1,5 +1,7 @@
 # Evaluating Algorithms and Languages for POS Tagging 
 
+We implement the Viterbi algorithm in Python and C++, and a Recurrent Neural Network, to evaluate part of speech (POS) tagging.
+
 Final project for LING 227.
 
 ## Running it yourself
