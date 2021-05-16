@@ -86,8 +86,8 @@ double eval_viterbi(FILE *in, int *start, int *end, int *tags, int **transition)
         {
             break;
         }
-        dumb_eval(start, end, tags, transition, sentence, len, &success, &total);
-        //eval_sent(start, end, tags, transition, sentence, len, &success, &total);
+        // dumb_eval(start, end, tags, transition, sentence, len, &success, &total);
+        eval_sent(start, end, tags, transition, sentence, len, &success, &total);
     }
     printf("SUCCESSFULLY TAGGED: %lu\nTOTAL TAGS: %lu\n", success, total);
     return ((double) success) / (total);
