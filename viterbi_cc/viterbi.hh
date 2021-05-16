@@ -28,6 +28,11 @@ double eval_viterbi(FILE *in, int *start, int *end, int *tags, int **transition)
 char **get_sentence(FILE *in, int *len);
 
 /**
+ * Evaluates a given sentence from a trained HMM using a naive approach.
+ */
+void dumb_eval(int *start, int *end, int *tags, int**transition, char **sentence, int len, size_t *success, size_t *total);
+
+/**
  * Evaluates a given sentence from a trained HMM using the Viterbi algorithm. Increments
  * "total" for each word in the sentence and increments "success" for each correct tag.
  */
