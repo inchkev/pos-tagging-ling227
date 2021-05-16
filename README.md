@@ -4,17 +4,16 @@ Final project for LING 227.
 
 ## Running it yourself
 
-# Python Viterbi
+### Python Viterbi
 
-Place the universal dataset directory in the same directory as the Python program.
-In the program, specify the dataset's prefix by changing the `UD_BASE` variable.
-To run, use `python viterbi.py`.
+The Python Viterbi implementation is in the `viterbi_python` directory. To specify the dataset, set the `UD_BASE` variable
+to the dataset's prefix (without "train.conllu", "dev.conllu", etc). To run, use `python viterbi.py`.
 
-# C++ Viterbi
+### C++ Viterbi
 
 Text
 
-# Python RNN
+### Python RNN
 
 Text
 
