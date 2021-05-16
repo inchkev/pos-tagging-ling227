@@ -7,7 +7,7 @@ Final project for LING 227.
 ### Python Viterbi
 
 The Python Viterbi implementation is in the `viterbi_python` directory. To specify the dataset, set the `UD_BASE` variable
-to the dataset's prefix (without "train.conllu", "dev.conllu", etc). To run, use `python viterbi.py`.
+to the dataset's prefix (without "train.conllu", "dev.conllu", etc. as those are automatically appended). To run, use `python viterbi.py`.
 
 ### C++ Viterbi
 
