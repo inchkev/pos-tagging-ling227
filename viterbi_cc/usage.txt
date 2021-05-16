@@ -1,5 +1,5 @@
 To run:
-  ./Viterbi [path to training file] [path to testing file]
+  time ./Viterbi [path to training file] [path to testing file]
   
 Other notes:
   All files must be in standardized .conllu format. If either path to the files
