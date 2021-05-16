@@ -9,6 +9,10 @@
 #include <cmath>
 #include <float.h>
 
+#include <chrono>
+#include <sys/time.h>
+#include <ctime>
+
 #include "viterbi.hh"
 
 #include <bits/stdc++.h>
@@ -60,7 +64,11 @@ int main(int argc, char *argv[])
     fclose(f);
     filter();
     FILE *f2 = fopen(argv[2], "r");
+    auto start_t = std::chrono::steady_clock::now();
     double correct = eval_viterbi(f2, start, end, tags, transition);
+    auto end_t = std::chrono::steady_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end_t - start_t;
+    printf("EVAL TIME: %lf\n",(elapsed_seconds.count()));
     printf("SUCCESS: %lf\n", correct * 100.0);
     fclose(f2);
 }
@@ -78,10 +86,53 @@ double eval_viterbi(FILE *in, int *start, int *end, int *tags, int **transition)
         {
             break;
         }
-        eval_sent(start, end, tags, transition, sentence, len, &success, &total);
+        dumb_eval(start, end, tags, transition, sentence, len, &success, &total);
+        //eval_sent(start, end, tags, transition, sentence, len, &success, &total);
     }
     printf("SUCCESSFULLY TAGGED: %lu\nTOTAL TAGS: %lu\n", success, total);
     return ((double) success) / (total);
+}
+
+void dumb_eval(int *start, int *end, int *tags, int**transition, char **sentence, int len, size_t *success, size_t *total)
+{
+    int k = 0;
+    int max_unknown = -1;
+    for (int i = 0; i < len; i++)
+    {
+        if (emission[unknown]->pos[i] > emission[unknown]->pos[k])
+        {
+            k = i;
+        }
+    }
+    for (int i = 0; i < len; i++)
+    {
+        double max_prob = -1.0 * DBL_MAX;
+        int max_pos = 0;
+        int a = i * 2;
+        int b = i * 2 + 1;
+        for (int j = 0; j < POS_NUM + 1; j++)
+        {
+            double em_count = 0;
+            if (emission.find(sentence[a]) == emission.end() || emission[sentence[a]]->count <= REMOVE_THRESH)
+            {
+                em_count = ((double)emission[unknown]->pos[k]) / ((double) emission[unknown]->count);
+            }
+            else
+            {
+                em_count = ((double)emission[sentence[a]]->pos[j]) / ((double) emission[sentence[a]]->count);
+            }
+            if (em_count > max_prob)
+            {
+                max_prob = em_count;
+                max_pos = j;
+            }
+        }
+        if (find_tag(sentence[b]) == max_pos)
+        {
+            *success += 1;
+        }
+        *total += 1;
+    }
 }
 
 void eval_sent(int *start, int *end, int *tags, int**transition, char **sentence, int len, size_t *success, size_t *total)
