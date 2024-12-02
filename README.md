@@ -35,4 +35,4 @@ The Python RNN (Bidirectional LSTM) implementation is in the `rnn` directory. To
 
 ## Authors
 
-[Kevin Chen](https://github.com/inchkev), [Nick Schoelkopf](https://github.com/NickSchoelkopf), [Neal Ma](https://github.com/nmadev)
+[Kevin Chen](https://github.com/inchkev), [Hailey Schoelkopf](https://github.com/haileyschoelkopf), [Neal Ma](https://github.com/nmadev)
